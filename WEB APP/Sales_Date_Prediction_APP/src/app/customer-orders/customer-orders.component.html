@@ -1,0 +1,115 @@
+<div class="container">
+    <div id="customerSearch" class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+      <h2 class="m-0 flex-shrink-0">{{ this.customerName }} - Orders</h2>
+    
+    </div>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th (click)="sortBy('orderid')" style="cursor: pointer;">
+            Order ID
+            <span *ngIf="sortColumn === 'orderid'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>
+          <!--<th (click)="sortBy('custid')" style="cursor: pointer;">
+            Customer ID
+            <span *ngIf="sortColumn === 'custid'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>-->
+          <th (click)="sortBy('requireddate')" style="cursor: pointer;">
+            Required Date
+            <span *ngIf="sortColumn === 'requireddate'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>
+          <th (click)="sortBy('shippeddate')" style="cursor: pointer;">
+            Shipped Date
+            <span *ngIf="sortColumn === 'shippeddate'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>
+          <th (click)="sortBy('shipname')" style="cursor: pointer;">
+            Ship Name
+            <span *ngIf="sortColumn === 'shipname'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>
+          <th (click)="sortBy('shipaddress')" style="cursor: pointer;">
+            Ship Address
+            <span *ngIf="sortColumn === 'shipaddress'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>
+          <th (click)="sortBy('shipcity')" style="cursor: pointer;">
+            Ship City
+            <span *ngIf="sortColumn === 'shipcity'">
+              {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody >
+        @for (order of displayedOrders; track order.orderid){
+          <tr>
+            <td>{{ order.orderid }}</td>
+            <!--<td>{{ order.custid }}</td>-->
+            <td>{{ order.requireddate | date: 'dd/mm/yyyy' }}</td>
+            <td>{{ order.shippeddate | date: 'dd/mm/yyyy' }}</td>
+            <td>{{ order.shipname }}</td>
+            <td>{{ order.shipaddress }}</td>
+            <td>{{ order.shipcity }}</td>
+            
+          </tr>
+        }
+        
+      </tbody>
+    </table>
+  
+    <div id="paginador" class=" mt-2 fw-bold fs-10 ">
+        <div class="d-flex flex-wrap justify-content-end align-items-center mb-2">
+          
+          <!-- Selector de filas con espacio interno de 5px -->
+          <div class="d-flex align-items-center me-3" style="margin-right: 6px;">
+            <span class="text-muted me-2" style="margin-right: 80px !important;">Rows per page:</span>
+            <select class="form-select form-select-sm fw-bold fs-10"
+                    style="width: 65px;"
+                    [value]="itemsPerPage"
+                    (change)="onItemsPerPageChange($event)">
+              @for (option of itemsPerPageOptions; track option) {
+                <option [value]="option" [selected]="option === itemsPerPage">{{ option }}</option>
+              }
+            </select>
+          </div>
+      
+          <!-- Controles de paginación con separación lateral -->
+          <div class="d-flex align-items-center" style="margin-left: 30px; color: #727272;">
+            <span class="mx-2">{{ paginationText }}</span>
+            <div class="btn-group border-0 gap-2">
+              <button class="btn btn-link text-dark p-1" style="margin-left: 20px; color: #727272;"
+                      [disabled]="currentPage === 1"
+                      (click)="previousPage()">
+                <i class="bi bi-chevron-left fw-bold fs-4"></i>
+              </button>
+              <button  class="btn btn-link text-dark p-1" style="margin-left: 20px; color: #727272;"
+                      [disabled]="currentPage * itemsPerPage >= customerOrders.length"
+                      (click)="nextPage()">
+                <i class="bi bi-chevron-right fs-3 fw-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Botón de cierre -->
+        <div class="d-flex justify-content-end">
+          <button [routerLink]="['',]" class="btn btn-link text-danger fw-bold text-decoration-none">
+            CLOSE
+          </button>
+        </div>
+      </div>
+
+    
+  </div>
+  

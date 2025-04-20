@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 35px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(49, 48, 48);
+    color: white;
+  }
+  
+  .logo {
+    height: 60px; /* ajusta según el tamaño de tu logo */
+  }
+
+  
