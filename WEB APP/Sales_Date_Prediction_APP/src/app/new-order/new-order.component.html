@@ -1,0 +1,116 @@
+
+<body>
+    <div class="form-header">
+        <h2>{{ this.customerName }} - New Order</h2>
+    </div>
+    <div class="container form-container">
+        
+        
+        <form>
+            <div class="form-section">
+                <h5 class="form-title">Order</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6" style="margin-bottom: 20px;">
+                        
+                        <select class="form-select form-select-sm  fs-10 border-0 border-bottom rounded-0 shadow-none" required
+                                (change)="onEmployeeSelect($event)">
+                                <option value="" disabled selected>Employye*</option>
+                            @for (option of EmployeesList; track option.empid) {
+                                <option [value]="option.empid" >{{ option.fullName }} </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 20px;">
+                        
+                        <select class="form-select form-select-sm  fs-10 border-0 border-bottom rounded-0 shadow-none" required
+                                (change)="onShipperSelect($event)">
+                                <option value="" disabled selected>Shipper*</option>
+                            @for (option of ShipperList; track option.shipperid) {
+                                <option [value]="option.shipperid" >{{ option.companyname }} </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-12">
+                        
+                        <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="Ship Name" id="shipName" #shipNameInput required>
+                    </div>
+                </div>
+                
+                <div class="row mb-3" >
+                    <div class="col-md-6" style="margin-top: 20px;">
+                        <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="Ship Address*" id="shipAddress" #shipAddressInput required>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 20px;">
+                        <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none" id="shipCity" placeholder="Ship City*" #shipCityInput required>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 20px;">
+                        <input type="text" class="form-control border-0 border-bottom rounded-0 shadow-none" id="shipCountry" placeholder="Ship Coutry*" #shipCountryInput required>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-4" style="margin-top: 20px;">
+                        <input type="date" class="form-control border-0 border-bottom rounded-0 shadow-none" id="orderDate" placeholder="Order Date*" #orderDateInput required>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 20px;">
+                        <input type="date" class="form-control border-0 border-bottom rounded-0 shadow-none" id="requiredDate" placeholder="Required Date*" #requiredDateInput required>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 20px;">
+                        <input type="date" class="form-control border-0 border-bottom rounded-0 shadow-none" id="shippedDate" placeholder="Shipped Date*" #shippedDateInput required>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-12" style="margin-top: 20px;">
+                        <input type="number" step="0.01" class="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="$ Freight*" id="freight" #freightInput required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section" >
+                <h5 class="order-details-header" >Order Details</h5>
+                <div class="row">
+                    <div class="">
+                        
+                        <select class="form-select form-select-sm  fs-10 border-0 border-bottom rounded-0 shadow-none" required
+                                (change)="onProductSelect($event)">
+                                <option value="" disabled selected>Product*</option>
+                            @for (option of productList; track option.productid) {
+                                <option [value]="option.productid" >{{ option.productname }} </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3" >
+                    <div class="col-md-4" style="margin-top: 20px;">
+                        <label for="unitPrice" class="form-label required-field">$ Unit Price</label>
+                        <input type="number" step="0.01" class="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="$ Unit Price*" id="unitPrice" [value]="unitprice"  #unitPrice disabled>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 40px;">
+                        <input type="number" class="form-control border-0 border-bottom rounded-0 shadow-none" id="quantity" placeholder="Quantity*" #qtyInput required>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 40px;">
+                        <input type="number" step="0.01" class="form-control border-0 border-bottom rounded-0 shadow-none" placeholder="Discount*" id="discount" #discountInput required>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <td class="d-flex justify-content-end">
+                
+                  <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+                    <button id="closebtn" (click)="closeModal()" class="btn btn-link fw-bold text-decoration-none p-0 text-nowrap">
+                      CANCEL
+                    </button>
+                    
+                    <button (click)="getDataForm()" id="savebtn" class="btn btn-link fw-bold text-decoration-none p-0 text-nowrap">
+                      SAVE
+                    </button>
+                  </div>
+                
+              </td>
+        </form>
+    </div>

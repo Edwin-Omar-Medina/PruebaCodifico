@@ -1,0 +1,203 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 35px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(49, 48, 48);
+  color: white;
+}
+
+.logo {
+  height: 60px; /* ajusta según el tamaño de tu logo */
+}
+
+
+
+/* Contenedor principal de la tabla con sombras y padding */
+/*CONTENEDOR PRINCIPAL CON BORDE Y SOMBRAS*/
+.table-container {
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 1rem; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+}
+
+/* TITULO H2*/
+h2 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #737373;
+}
+
+/*ESTILO DE LA TABLA*/
+table {
+  width: 100%; 
+  border-collapse: collapse;
+}
+
+/* ENCABEZADO DE LA PAGINA*/
+th {
+  text-align: left; /* Alineación del texto a la izquierda */
+  cursor: pointer; /* Cambia el cursor al pasar por encima (como si fuera clickeable) */
+  padding: 0.75rem; /* Espaciado interno */
+  font-weight: 600; /* Texto más grueso */
+  font-weight: bold;
+  color: #737373;
+}
+
+/* Celdas del cuerpo de la tabla */
+td {
+  padding: 0.75rem; /* Espaciado interno */
+  border-top: 1px solid #eee; /* Línea superior tenue para separar filas */
+  color: #727272; /* Color gris del texto */
+  font-weight: 600; /* Texto más marcado */
+}
+
+/* Botones de paginación */
+.pagination button {
+  font-size: 1rem; /* Tamaño del texto */
+  cursor: pointer; /* Aparece la mano al pasar el cursor */
+}
+
+/* Contenedor general con bordes estilizados */
+.container {
+  border: 1px solid #d5d6d8; /* Borde principal */
+  border-radius: 12px; /* Bordes redondeados */
+  border-top: 1px solid #f2f3f5; /* Borde superior más claro */
+  border-bottom: 1px solid #6f6f70; /* Borde inferior más oscuro */
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0rem;
+  max-width: 90%; /* Ocupa hasta el 90% del contenedor padre */
+  
+}
+
+/* Estilo del buscador */
+#customerSearch {
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Contenedor del input de búsqueda */
+.search-container {
+  display: flex; /* Layout flexible para alinear elementos en fila */
+  align-items: center; /* Centra verticalmente */
+  border-bottom: 2px solid #ccc; /* Línea inferior */
+  padding: 4px 0; /* Espaciado vertical */
+  max-width: 700px;
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Estilo del campo de entrada del buscador */
+.search-input {
+  border: none; /* Sin borde */
+  outline: none; /* Sin borde al enfocar */
+  flex: 1; /* Ocupa todo el espacio disponible */
+  font-size: 20px; /* Tamaño del texto */
+}
+
+/* Estilo del placeholder del input */
+.search-input::placeholder {
+  color: #0f0f0f; /* Color oscuro */
+}
+
+/* Ícono del buscador */
+.search-icon {
+  color: #090909;
+  font-size: 20px;
+  margin-left: 8px; /* Separación a la izquierda */
+}
+
+/* Contenedor de información y controles de paginación */
+.pagination-container {
+  font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+  padding: 0.5rem 0; /* Espaciado vertical */
+}
+
+/* Etiqueta de filas (por ejemplo, "Filas por página") */
+.rows-label {
+  color: #6c757d; /* Color gris */
+  font-weight: 400; /* Peso normal */
+}
+
+/* Select para elegir número de filas por página */
+.rows-select {
+  width: 70px;
+  display: inline-block;
+  margin-left: 0.5rem; /* Separación respecto al texto anterior */
+}
+
+/* Texto de paginación (ej: "Página 1 de 5") */
+.pagination-text {
+  color: #212529; /* Color negro suave */
+  font-weight: 400; /* Peso normal */
+  margin-right: 1rem; /* Separación a la derecha */
+}
+
+/* Estilo de botones de paginación (números) */
+.pagination-buttons .btn {
+  padding: 0.25rem 0.5rem;
+  min-width: 32px;
+  border-color: #dee2e6; /* Color de borde */
+}
+
+/* Esquinas de los botones: el primero */
+.pagination-buttons .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Esquinas de los botones: el último */
+.pagination-buttons .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px; /* Evita separación visual entre botones */
+}
+
+/* Botones de paginación deshabilitados */
+.pagination-buttons .btn:disabled {
+  opacity: 0.6; /* Más translúcido */
+  background-color: #f8f9fa; /* Color de fondo gris claro */
+}
+
+/* Espaciado y estilo para el contenedor del paginador */
+#paginador {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  color: #212529;
+  font-weight: 400;
+}
+
+/* Botones agrupados (como "Anterior / Siguiente") */
+.btn-group {
+  color: #212529;
+  font-weight: 600;
+}
+
+/* ----------------------------- */
+
+/* Estilo personalizado para el selector de páginas (select dropdown) */
+.form-select {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
+  border-bottom: 1px solid #6f6f70; /* Línea inferior oscura */
+}
+
+
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 2, 2, 0.5); /* fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}

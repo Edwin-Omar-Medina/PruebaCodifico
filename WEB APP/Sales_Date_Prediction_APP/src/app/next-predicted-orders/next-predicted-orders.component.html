@@ -1,0 +1,109 @@
+<div class="header">
+  <h1>Sales Date Prediction APP</h1>
+  <img src="../assets/images/logoNserio.png" alt="Logo" class="logo">
+</div>
+
+
+<div class="container">
+  <div id="customerSearch" class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+    <h2 class="m-0 flex-shrink-0">Customers</h2>
+  
+    <div class="search-container flex-grow-1">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Customer Name"
+        (input)="onSearch($event)">
+      <i class="bi bi-search search-icon"></i>
+    </div>
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th (click)="sortBy('customerName')" style="cursor: pointer;">
+          Customer Name
+          <span *ngIf="sortColumn === 'customerName'">
+            {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+          </span>
+        </th>
+        <th (click)="sortBy('lastOrderDate')" style="cursor: pointer;">
+          Last Order Date
+          <span *ngIf="sortColumn === 'lastOrderDate'">
+            {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+          </span>
+        </th>
+        <th (click)="sortBy('nextPredictedOrder1')" style="cursor: pointer;">
+          Next Predicted Order
+          <span *ngIf="sortColumn === 'nextPredictedOrder1'">
+            {{ sortDirection === 'asc' ? '🡩' : '🡫' }}
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody >
+      @for (order of displayedOrders; track order.customerName){
+        <tr>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.lastOrderDate | date: 'dd/mm/yyyy' }}</td>
+          <td>{{ order.nextPredictedOrder1 | date: 'dd/mm/yyyy' }}</td>
+          <td class="text-center">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center  gap-3 gap-md-5">
+              <button [routerLink]="['/customer-orders', order.customerName]" class="btn btn-link text-danger fw-bold text-decoration-none p-0 text-nowrap" >
+                VIEW ORDERS
+              </button>
+              <button (click)="openNewOrderModal(order.customerName)"  class="btn btn-link text-success fw-bold text-decoration-none p-0 text-nowrap justify-content-end">
+                NEW ORDER
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+      
+    </tbody>
+  </table>
+
+  <div id="paginador" class=" mt-2 fw-bold fs-10 ">
+    <div class="d-flex flex-wrap justify-content-end align-items-center mb-2">
+      
+      <!-- Selector de filas con espacio interno de 5px -->
+      <div class="d-flex align-items-center me-3" style="margin-right: 6px;">
+        <span class="text-muted me-2" style="margin-right: 80px !important;">Rows per page:</span>
+        <select class="form-select form-select-sm fw-bold fs-10"
+                style="width: 65px;"
+                [value]="itemsPerPage"
+                (change)="onItemsPerPageChange($event)">
+          @for (option of itemsPerPageOptions; track option) {
+            <option [value]="option" [selected]="option === itemsPerPage">{{ option }}</option>
+          }
+        </select>
+      </div>
+  
+      <!-- Controles de paginación con separación lateral -->
+      <div class="d-flex align-items-center" style="margin-left: 30px; color: #727272;">
+        <span class="mx-2">{{ paginationText }}</span>
+        <div class="btn-group border-0 gap-2">
+          <button class="btn btn-link text-dark p-1" style="margin-left: 20px; color: #727272;"
+                  [disabled]="currentPage === 1"
+                  (click)="previousPage()">
+            <i class="bi bi-chevron-left fw-bold fs-4"></i>
+          </button>
+          <button  class="btn btn-link text-dark p-1" style="margin-left: 20px; color: #727272;"
+                  [disabled]="currentPage * itemsPerPage >= customerOrders.length"
+                  (click)="nextPage()">
+            <i class="bi bi-chevron-right fs-3 fw-bold"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    
+  </div>
+
+  <app-new-order 
+  *ngIf="selectedCustomerName"
+  [customerName]="selectedCustomerName"
+  (close)="closeNewOrderModal()"
+  class="modal-overlay">
+  </app-new-order>
+</div>

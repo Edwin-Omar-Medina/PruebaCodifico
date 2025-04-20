@@ -1,0 +1,95 @@
+body{
+  border: 3px solid #656566;
+    border-radius: 20px;
+    
+}
+
+  /*BOTONES CLOSE Y SAVE*/
+  #savebtn, #closebtn {
+    color: #04a940;
+    height: 40px;
+    width: 65px;
+  }
+  
+  #savebtn:hover {
+    background-color: #04a940;
+    color: white;
+    border-color: #0dff00;
+  }
+
+  #closebtn:hover {
+    color: #ffff;
+
+    background-color: #a60202;
+    border-color: #ff0000;
+  }
+
+
+  /**/
+  .form-section {
+    margin-bottom: 1.5rem;
+  }
+
+.form-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.required-field::after {
+    content: " *";
+    color: red;
+}
+.form-container {
+    max-width: 900px;
+    padding: 1rem;
+}
+
+.form-header {
+    background-color: #4C9950;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    color: white;
+}
+
+.order-details-header {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+}
+
+
+
+
+  /*ESTILOS PARA MODAL*/
+  :host.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 0px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+
+  .form-select {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
+    border-bottom: 1px solid #6f6f70; /* Línea inferior oscura */
+  }
