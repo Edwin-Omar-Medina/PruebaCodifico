@@ -49,23 +49,22 @@ Para su correcto funcionamiento, **asegúrate de ejecutar la Web API también en
 ## 🚀 Instrucciones para ejecutar el proyecto
 
 ### 1. BASE DE DATOS:
-1. Descargar el archivo: `bd_pruebas.sql`.
-2. Abrir sqlServer y ejecutar el script 
+- Descargar el archivo: `bd_pruebas.sql`.
+- Abrir sqlServer y ejecutar el script 
        
 ### 2. CLONAR EL PROYECTO:
-       -Clonar el proyecto  'https://github.com/Edwin-Omar-Medina/PruebaCodifico.git'
+- Clonar el proyecto ` https://github.com/Edwin-Omar-Medina/PruebaCodifico.git`
 
 ### 3. WEBB API:
-       Del proyecto clonado en Visual Studio se debe abrir la Carpeta: `WEB API`
-       Ejecutarlo con la opción http
+- Del proyecto clonado en Visual Studio se debe abrir la Carpeta: `WEB API`
+- Ejecutarlo con la opción http
 
 ### 4. WEBB APP:
-       Del proyecto clonado en Visual Studio Code se debe abrir la Carpeta: `WEB APP`
-       Abrir la terminal
-       Navegar a el proyecto (cd Sales_Date_Prediction_APP)
-       Instalar paquetes del proyecto con npm install
-       Ejecutarlo con ng serve
+- Del proyecto clonado en Visual Studio Code se debe abrir la Carpeta: `WEB APP`
+- Abrir la terminal
+- Navegar a el proyecto `cd Sales_Date_Prediction_APP`
+- Instalar paquetes del proyecto con `npm install`
+- Ejecutarlo con `ng serve`
        
 ```bash
-git clone https://github.com/tu-usuario/PruebaCodifico.git
-cd PruebaCodifico
+
