@@ -49,8 +49,8 @@ Para su correcto funcionamiento, **asegúrate de ejecutar la Web API también en
 ## 🚀 Instrucciones para ejecutar el proyecto
 
 ### 1. BASE DE DATOS:
-       -Descargar archivo `bd_pruebas.sql`
-       -Abrir sqlServer y ejecutar el script 
+1. Descargar el archivo: `bd_pruebas.sql`.
+2. Abrir sqlServer y ejecutar el script 
        
 ### 2. CLONAR EL PROYECTO:
        -Clonar el proyecto  'https://github.com/Edwin-Omar-Medina/PruebaCodifico.git'
