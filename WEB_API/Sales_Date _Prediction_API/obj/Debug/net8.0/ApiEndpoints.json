@@ -1,0 +1,137 @@
+[
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.CustomerOrderController",
+    "Method": "GetCustomerOrder",
+    "RelativePath": "api/CustomerOrder/GetCustomerOrder/{companyname}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyname",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.CustomerOrderController",
+    "Method": "ListCustomerOrder",
+    "RelativePath": "api/CustomerOrder/ListCustomerOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.EmployeesController",
+    "Method": "ListEmployees",
+    "RelativePath": "api/Employees/ListEmployees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.NextPredictedOrdersController",
+    "Method": "GetNextPredictedOrders",
+    "RelativePath": "api/NextPredictedOrders/GetNextPredictedOrders/{customerName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.NextPredictedOrdersController",
+    "Method": "ListNextPredictedOrders",
+    "RelativePath": "api/NextPredictedOrders/ListNextPredictedOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.OrdersController",
+    "Method": "InsertOrderWithDetails",
+    "RelativePath": "api/Orders/InsertOrderWithDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "input",
+        "Type": "Sales_Date__Prediction_API.Models.InsertOrderWithProduct",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.TotalProductController",
+    "Method": "GetNextPredictedOrders",
+    "RelativePath": "api/TotalProduct/GetListTotalProduct/{idproduct}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idproduct",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.TotalProductController",
+    "Method": "ListNextPredicListTotalProducttedOrders",
+    "RelativePath": "api/TotalProduct/ListTotalProduct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.TotalShipperController",
+    "Method": "ListTotalShippers",
+    "RelativePath": "api/TotalShipper/ListTotalShippers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sales_Date__Prediction_API.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Sales_Date__Prediction_API.WeatherForecast, Sales_Date _Prediction_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
