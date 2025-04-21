@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "e782f715-0c2b-470e-997d-985da94a3685",
+		"name": "Prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34850343"
+	},
+	"item": [
+		{
+			"name": "ListNextPredictedOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/NextPredictedOrders/ListNextPredictedOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"NextPredictedOrders",
+						"ListNextPredictedOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNextPredictedOrders/customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/NextPredictedOrders/GetNextPredictedOrders/Customer YBQTI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"NextPredictedOrders",
+						"GetNextPredictedOrders",
+						"Customer YBQTI"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListCustomerOrder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/CustomerOrder/ListCustomerOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"CustomerOrder",
+						"ListCustomerOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerOrder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/CustomerOrder/GetCustomerOrder/Customer YBQTI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"CustomerOrder",
+						"GetCustomerOrder",
+						"Customer YBQTI"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/Employees/ListEmployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"Employees",
+						"ListEmployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListTotalShippers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/TotalShipper/ListTotalShippers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"TotalShipper",
+						"ListTotalShippers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListTotalProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5259/api/TotalProduct/ListTotalProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5259",
+					"path": [
+						"api",
+						"TotalProduct",
+						"ListTotalProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertOrderWithDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Error Message</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return { response: pm.response.text() }\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderid\":11078,\r\n  \"custid\": 1,\r\n  \"empid\": 2,\r\n  \"shipperid\": 1,\r\n  \"orderdate\": \"2006-07-04\",\r\n  \"requireddate\": \"2006-07-04\",\r\n  \"shippeddate\": \"2006-07-09\",\r\n  \"shipaddress\": \"123 Calle Falsa\",\r\n  \"shipcity\": \"Springfield\",\r\n  \"shipname\": \"Mi Empresa\",\r\n  \"shipcountry\": \"USA\",\r\n  \"productid\": 1,\r\n  \"qty\": 2,\r\n  \"unitprice\": 18.00,\r\n  \"discount\": 0.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7163/api/Orders/InsertOrderWithDetails",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7163",
+					"path": [
+						"api",
+						"Orders",
+						"InsertOrderWithDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infoproduct",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
