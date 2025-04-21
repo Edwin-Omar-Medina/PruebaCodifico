@@ -44,6 +44,25 @@ API desarrollada en **ASP.NET Core** para gestionar las operaciones de backend.
 Los endpoints en el Front-End están configurados con **HTTP**, ya que el proyecto fue ejecutado localmente durante la prueba.  
 Para su correcto funcionamiento, **asegúrate de ejecutar la Web API también en entorno local** usando HTTP.
 
+
+## 5. Postman Collection
+
+Se adjunta el archivo `Prueba.postman_collection.json` que contiene pruebas para los siguientes endpoints:
+
+- `GET /NextPredictedOrders/ListNextPredictedOrders`
+- `GET /api/NextPredictedOrders/GetNextPredictedOrders/{custName}`
+- `GET /api/CustomerOrder/ListCustomerOrder`
+- `GET /api/CustomerOrder/GetCustomerOrder/{custName}`
+- `GET /api/Employees/ListEmployees`
+- `GET /api/TotalShipper/ListTotalShippers`
+- `GET /api/TotalProduct/ListTotalProduct`
+- `GET /api/TotalProduct/GetListTotalProduct/{idproduct}`
+- `POST /api/api/Orders/InsertOrderWithDetails`
+
+### Instrucciones:
+1. Abrir Postman.
+2. Importar la colección desde el archivo `.json`.
+
 ---
 
 ## 🚀 Instrucciones para ejecutar el proyecto
